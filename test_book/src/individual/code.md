@@ -5,7 +5,7 @@ This section only does simple code blocks and inline code, detailed syntax highl
 ---
 
 ```
-This is a codeblock
+This is a codeblock.
 ```
 
 ---
