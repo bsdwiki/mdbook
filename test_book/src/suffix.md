@@ -1,3 +1,3 @@
 # 联系我
 
-邮箱：sam@bsd.wiki
+邮箱：samATbsdDOTwiki
