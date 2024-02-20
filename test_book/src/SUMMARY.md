@@ -44,7 +44,7 @@
   - [无线蓝牙鼠标的设置](di-2-zhang-an-zhuang-freebsd/di-2.12-jie-wu-xian-lan-ya-shu-biao-de-she-zhi.md)
   - [FreeBSD 硬件选择](di-2-zhang-an-zhuang-freebsd/di-2.13-jie-freebsd-ying-jian-xuan-ze.md)
 
-- [3 章 软件源及包管理器](rust/README.md)
+- [软件源及包管理器](rust/README.md)
 
   - [包管理器概述](di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.0-jie-bao-guan-li-qi-gai-shu.md)
   - [FreeBSD 镜像站现状](di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.1-jie-freebsd-jing-xiang-zhan-xian-zhuang.md)
