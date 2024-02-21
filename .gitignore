@@ -8,7 +8,7 @@ guide/book
 
 .vscode
 dummy_book/book/
-book/
+book
 
 # Ignore Jetbrains specific files.
 .idea/
