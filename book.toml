@@ -12,7 +12,7 @@ edition = "2018"
 [output.html]
 mathjax-support = false
 git-repository-url = "https://github.com/bsdwiki/mdBook/tree/main/src"
-edit-url-template = "https://github.com/bsdwiki/mdBook/edit/beta/src/{path}"
+edit-url-template = "https://github.com/bsdwiki/mdBook/edit/beta/{path}"
 
 [output.html.playground]
 editable = true
