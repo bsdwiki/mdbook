@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>包管理器 - BSD中文社区</title>
+
+
+        <!-- Custom HTML head -->
+        {<script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b176b433d6c2f97d5091ede06b2dbcf4";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>}
+        
+
+        <meta name="description" content="A demo book to test and validate changes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../prefix.html">社区介绍</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">1.</strong> 走进 FreeBSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.1-jie-shi-mo-shi-unix.html"><strong aria-hidden="true">1.1.</strong> 什么是 UNIX</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.2-jie-shi-mo-shi-unixlike.html"><strong aria-hidden="true">1.2.</strong>  什么是 Unix-like</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.3-jie-shi-mo-shi-linux.html"><strong aria-hidden="true">1.3.</strong> 什么是 Linux</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.4-jie-freebsd-yu-qi-ta-cao-zuo-xi-tong.html"><strong aria-hidden="true">1.4.</strong> FreeBSD 与其他操作系统</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.5-jie-wei-shi-mo-yao-shi-yong-freebsd.html"><strong aria-hidden="true">1.5.</strong> 为什么要使用 FreeBSD</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.6-jie-unix-zhe-xue.html"><strong aria-hidden="true">1.6.</strong> UNIX 哲学</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.7-jie-qi-ta-bsd-jian-jie.html"><strong aria-hidden="true">1.7.</strong> 其他 BSD 简介</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.8-jie-linux-yong-hu-qian-yi-zhi-bei.html"><strong aria-hidden="true">1.8.</strong> Linux 用户迁移指北</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.9-jie-shui-zai-shi-yong-freebsd.html"><strong aria-hidden="true">1.9.</strong> 谁在使用 FreeBSD</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.10-jie-freebsd-de-bu-zu-zhi-chu.html"><strong aria-hidden="true">1.10.</strong> FreeBSD 的不足之处</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.11-jie-freebsd-zi-xiang-mu.html"><strong aria-hidden="true">1.11.</strong> FreeBSD 子项目</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.12-jie-freebsd-fa-hang-shuo-ming.html"><strong aria-hidden="true">1.12.</strong> FreeBSD 发行说明</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.13-jie-freebsd-ji-du-bao-gao.html"><strong aria-hidden="true">1.13.</strong> FreeBSD 季度报告</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.14-jie-freebsd-an-quan-gong-gao.html"><strong aria-hidden="true">1.14.</strong> FreeBSD 安全公告</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.15-jie-freebsd-kai-fa-ji-hua.html"><strong aria-hidden="true">1.15.</strong> FreeBSD 开发计划</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.16-jie-bian-zhuan-shuo-ming.html"><strong aria-hidden="true">1.16.</strong> 编撰说明</a></li><li class="chapter-item expanded "><a href="../di-1-zhang-zou-jin-freebsd/di-1.17-jie-can-kao-zi-liao-yu-gong-xian-zhe-ming-dan.html"><strong aria-hidden="true">1.17.</strong> 参考资料与贡献者名单</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">2.</strong> 安装 FreeBSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.0-jie-tu-jie-an-zhuang.html"><strong aria-hidden="true">2.1.</strong> 图解安装</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.1-jie-san-zhong-xu-ni-ji-yu-freebsd-ban-ben-bi-jiao.html"><strong aria-hidden="true">2.2.</strong> 三种虚拟机与 FreeBSD 版本比较</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.2-jie-an-zhuang-freebsd-ji-yu-virtual-box.html"><strong aria-hidden="true">2.3.</strong> 安装 FreeBSD——基于 Virtual Box</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.3-jie-an-zhuang-freebsd-ji-yu-vmware-workstation-pro.html"><strong aria-hidden="true">2.4.</strong> 安装 FreeBSD——基于 Vmware Workstation Pro</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.4-jie-teng-xun-yun-qing-liang-yun-ji-qi-ta-fu-wu-qi-dd-an-zhuang-freebsd.html"><strong aria-hidden="true">2.5.</strong> 腾讯云轻量云及其他服务器安装 FreeBSD</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.5-jie-ru-he-zai-zi-ji-de-ji-qi-shang-an-zhuang-freebsd.html"><strong aria-hidden="true">2.6.</strong> 如何在自己的机器上安装 FreeBSD</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.6-jie-shou-dong-an-zhuang-freebsd.html"><strong aria-hidden="true">2.7.</strong> 手动安装 FreeBSD</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.7-jie-ee-yong-fa-ji-wang-luo-pei-zhi.html"><strong aria-hidden="true">2.8.</strong> ee 用法及网络配置</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.8-jie-chang-yong-ruan-jian-yu-ssh-pei-zhi.html"><strong aria-hidden="true">2.9.</strong> 常用软件 与 SSH 配置</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.9-jie-chu-mo-ban-de-she-zhi.html"><strong aria-hidden="true">2.10.</strong> 触摸板的设置</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.10-jie-sheng-ka-yu-wang-ka-she-zhi.html"><strong aria-hidden="true">2.11.</strong> 声卡与网卡设置</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.11-jie-da-yin-ji-de-an-zhuang.html"><strong aria-hidden="true">2.12.</strong> 打印机的安装</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.12-jie-wu-xian-lan-ya-shu-biao-de-she-zhi.html"><strong aria-hidden="true">2.13.</strong> 无线蓝牙鼠标的设置</a></li><li class="chapter-item expanded "><a href="../di-2-zhang-an-zhuang-freebsd/di-2.13-jie-freebsd-ying-jian-xuan-ze.html"><strong aria-hidden="true">2.14.</strong> FreeBSD 硬件选择</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">3.</strong> 软件源及包管理器</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.0-jie-bao-guan-li-qi-gai-shu.html"><strong aria-hidden="true">3.1.</strong> 包管理器概述</a></li><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.1-jie-freebsd-jing-xiang-zhan-xian-zhuang.html"><strong aria-hidden="true">3.2.</strong> FreeBSD 镜像站现状</a></li><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.2-jie-freebsd-huan-yuan-fang-shi.html"><strong aria-hidden="true">3.3.</strong> FreeBSD 换源方式</a></li><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.3-jie-gitup-de-yong-fa.html"><strong aria-hidden="true">3.4.</strong> gitup 的用法</a></li><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.4-jie-ruan-jian-bao-guan-li-qi-pkg-de-yong-fa.html"><strong aria-hidden="true">3.5.</strong> 软件包管理器 pkg 的用法</a></li><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.5-jie-tong-guo-yuan-dai-ma-ports-fang-shi-an-zhuang-ruan-jian.html"><strong aria-hidden="true">3.6.</strong> 通过源代码 ports 方式安装软件</a></li><li class="chapter-item expanded "><a href="../di-3-zhang-ruan-jian-yuan-ji-bao-guan-li-qi/di-3.6-jie-tong-guo-dvd-an-zhuang-ruan-jian.html"><strong aria-hidden="true">3.7.</strong> 通过 DVD 安装软件</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">4.</strong> 桌面安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.0-jie-gai-shu.html"><strong aria-hidden="true">4.1.</strong> 概述（必看）</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.1-jie-an-zhuang-xian-ka-qu-dong-ji-xorg-bi-kan.html"><strong aria-hidden="true">4.2.</strong> 安装显卡驱动及 Xorg（必看）</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.2-jie-an-zhuang-kde-5.html"><strong aria-hidden="true">4.3.</strong> 安装 KDE 5</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.3-jie-an-zhuang-gnome.html"><strong aria-hidden="true">4.4.</strong> 安装 Gnome</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.4-jie-an-zhuang-mate.html"><strong aria-hidden="true">4.5.</strong> 安装 Mate</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.5-jie-an-zhuang-xfce.html"><strong aria-hidden="true">4.6.</strong> 安装 Xfce</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.6-jie-an-zhuang-cinnamon.html"><strong aria-hidden="true">4.7.</strong> 安装 Cinnamon</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.7-jie-an-zhuang-lumina.html"><strong aria-hidden="true">4.8.</strong> 安装 Lumina</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.8-jie-an-zhuang-lxqt.html"><strong aria-hidden="true">4.9.</strong> 安装 LXQt</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.9-jie-an-zhuang-bspwm.html"><strong aria-hidden="true">4.10.</strong> 安装 bspwm</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.10-jie-root-deng-lu-zhuo-mian.html"><strong aria-hidden="true">4.11.</strong> root 登录桌面</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.11-jie-zhu-ti-yu-mei-hua.html"><strong aria-hidden="true">4.12.</strong> 主题与美化</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.12-jie-yuan-cheng-zhuo-mian-guan-li.html"><strong aria-hidden="true">4.13.</strong> 远程桌面管理</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.13-jie-an-zhuang-wayland-ke-xuan.html"><strong aria-hidden="true">4.14.</strong> 安装 Wayland （可选）</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.14-jie-an-zhuang-pantheon.html"><strong aria-hidden="true">4.15.</strong> 安装 Pantheon</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.15-jie-an-zhuang-i3wm.html"><strong aria-hidden="true">4.16.</strong> 安装 i3wm</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.16-jie-an-zhuang-cde.html"><strong aria-hidden="true">4.17.</strong> 安装 CDE</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.17-jie-an-zhuang-awesome.html"><strong aria-hidden="true">4.18.</strong> 安装 Awesome</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.18-jie-an-zhuang-fvwm.html"><strong aria-hidden="true">4.19.</strong> 安装 FVWM</a></li><li class="chapter-item expanded "><a href="../di-4-zhang-zhuo-mian-an-zhuang/di-4.19-jie-an-zhuang-hyprland.html"><strong aria-hidden="true">4.20.</strong> 安装 Hyprland</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">5.</strong> 输入法及常用软件</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.0-jie-shu-ru-fa-yu-huan-jing-bian-liang.html"><strong aria-hidden="true">5.1.</strong> 输入法与环境变量</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.1-jie-fcitx-shu-ru-fa-kuang-jia.html"><strong aria-hidden="true">5.2.</strong> Fcitx 输入法框架</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.2-jie-ibus-shu-ru-fa-kuang-jia.html"><strong aria-hidden="true">5.3.</strong> Ibus 输入法框架</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.3-jie-wu-bi-shu-ru-fa.html"><strong aria-hidden="true">5.4.</strong> 五笔输入法</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.4-jie-firefox-yu-chromium-an-zhuang.html"><strong aria-hidden="true">5.5.</strong> Firefox 与 Chromium 安装</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.5-jie-an-zhuang-jin-shan-wps.html"><strong aria-hidden="true">5.6.</strong> 安装金山 WPS</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.6-jie-an-zhuang-qq.html"><strong aria-hidden="true">5.7.</strong> 安装 QQ</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.7-jie-geng-huan-zi-ti.html"><strong aria-hidden="true">5.8.</strong> 更换字体</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.8-jie-wine.html"><strong aria-hidden="true">5.9.</strong> wine</a></li><li class="chapter-item expanded "><a href="../di-5-zhang-shu-ru-fa-ji-chang-yong-ruan-jian/di-5.9-jie-ya-suo-yu-jie-ya.html"><strong aria-hidden="true">5.10.</strong> 压缩与解压</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">6.</strong> 文件系统与磁盘管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-6-zhang-wen-jian-xi-tong-yu-ci-pan-guan-li/di-6.1-jie-ufs.html"><strong aria-hidden="true">6.1.</strong> UFS</a></li><li class="chapter-item expanded "><a href="../di-6-zhang-wen-jian-xi-tong-yu-ci-pan-guan-li/di-6.2-jie-zfs.html"><strong aria-hidden="true">6.2.</strong> ZFS</a></li><li class="chapter-item expanded "><a href="../di-6-zhang-wen-jian-xi-tong-yu-ci-pan-guan-li/di-6.3-jie-ci-pan-kuo-rong.html"><strong aria-hidden="true">6.3.</strong> 磁盘扩容</a></li><li class="chapter-item expanded "><a href="../di-6-zhang-wen-jian-xi-tong-yu-ci-pan-guan-li/di-6.4-jie-ntfs-de-gua-zai.html"><strong aria-hidden="true">6.4.</strong> NTFS 的挂载</a></li><li class="chapter-item expanded "><a href="../di-6-zhang-wen-jian-xi-tong-yu-ci-pan-guan-li/di-6.5-jie-swap-jiao-huan-fen-qu-de-she-zhi.html"><strong aria-hidden="true">6.5.</strong> SWAP 交换分区的设置</a></li><li class="chapter-item expanded "><a href="../di-6-zhang-wen-jian-xi-tong-yu-ci-pan-guan-li/di-6.6-jie-ext-234-deng-wen-jian-xi-tong.html"><strong aria-hidden="true">6.6.</strong> Ext 2/3/4 等文件系统</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">7.</strong> VPN 与代理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-7-zhang-vpn-yu-dai-li/di-7.1-jie-http-dai-li.html"><strong aria-hidden="true">7.1.</strong> HTTP 代理</a></li><li class="chapter-item expanded "><a href="../di-7-zhang-vpn-yu-dai-li/di-7.2-jie-v2ray.html"><strong aria-hidden="true">7.2.</strong> V2ray</a></li><li class="chapter-item expanded "><a href="../di-7-zhang-vpn-yu-dai-li/di-7.3-jie-clash.html"><strong aria-hidden="true">7.3.</strong> Clash</a></li><li class="chapter-item expanded "><a href="../di-7-zhang-vpn-yu-dai-li/di-7.4-jie-openvpn.html"><strong aria-hidden="true">7.4.</strong> OpenVPN</a></li><li class="chapter-item expanded "><a href="../di-7-zhang-vpn-yu-dai-li/di-7.5-jie-wireguard.html"><strong aria-hidden="true">7.5.</strong> Wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">8.</strong> 用户与权限</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-8-zhang-yong-hu-yu-quan-xian/di-8.1-jie-sudo.html"><strong aria-hidden="true">8.1.</strong> sudo</a></li><li class="chapter-item expanded "><a href="../di-8-zhang-yong-hu-yu-quan-xian/di-8.2-jie-tian-jia-yong-hu.html"><strong aria-hidden="true">8.2.</strong> 添加用户</a></li><li class="chapter-item expanded "><a href="../di-8-zhang-yong-hu-yu-quan-xian/di-8.3-jie-zu.html"><strong aria-hidden="true">8.3.</strong> 组</a></li><li class="chapter-item expanded "><a href="../di-8-zhang-yong-hu-yu-quan-xian/di-8.4-jie-yong-hu-quan-xian.html"><strong aria-hidden="true">8.4.</strong> 用户权限</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">9.</strong> Jail</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-9-zhang-jail/di-9.1-jie-jail-yu-docker-de-bi-jiao.html"><strong aria-hidden="true">9.1.</strong> jail 与 docker 的比较</a></li><li class="chapter-item expanded "><a href="../di-9-zhang-jail/di-9.2-jie-jail-xiang-guan-shu-yu.html"><strong aria-hidden="true">9.2.</strong> jail 相关术语</a></li><li class="chapter-item expanded "><a href="../di-9-zhang-jail/di-9.3-jie-jail-pei-zhi.html"><strong aria-hidden="true">9.3.</strong> jail 配置</a></li><li class="chapter-item expanded "><a href="../di-9-zhang-jail/di-9.4-jie-jail-geng-xin.html"><strong aria-hidden="true">9.4.</strong> jail 更新</a></li><li class="chapter-item expanded "><a href="../di-9-zhang-jail/di-9.5-jie-shi-yong-ezjail-guan-li-jail.html"><strong aria-hidden="true">9.5.</strong> 使用 ezjail 管理 jail</a></li><li class="chapter-item expanded "><a href="../di-9-zhang-jail/di-9.6-jie-shi-yong-qjail-guan-li-jail.html"><strong aria-hidden="true">9.6.</strong> 使用 qjail 管理 jail</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">10.</strong> 虚拟化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.1-jie-xu-ni-hua-jian-jie.html"><strong aria-hidden="true">10.1.</strong> 虚拟化简介</a></li><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.2-jie-an-zhuang-virtual-box.html"><strong aria-hidden="true">10.2.</strong> 安装 Virtual Box</a></li><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.3-jie-an-zhuang-bhyve.html"><strong aria-hidden="true">10.3.</strong> 安装 bhyve</a></li><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.4-jie-shi-yong-cbsd-guan-li-bhyve.html"><strong aria-hidden="true">10.4.</strong> 使用 cbsd 管理 bhyve</a></li><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.5-jie-shi-yong-bhyve-an-zhuang-windows-10.html"><strong aria-hidden="true">10.5.</strong> 使用 bhyve 安装 Windows 10</a></li><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.6-jie-an-zhuang-xen.html"><strong aria-hidden="true">10.6.</strong> 安装 XEN</a></li><li class="chapter-item expanded "><a href="../di-10-zhang-xu-ni-hua/di-10.7-jie-shi-yong-xen-an-zhuang-windows.html"><strong aria-hidden="true">10.7.</strong> 使用 XEN 安装 Windows</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">11.</strong> 更新与升级 FreeBSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-11-zhang-geng-xin-yu-sheng-ji-freebsd/di-11.1-jie-tong-guo-freebsdupdate-geng-xin.html"><strong aria-hidden="true">11.1.</strong> 通过 freebsd-update 更新</a></li><li class="chapter-item expanded "><a href="../di-11-zhang-geng-xin-yu-sheng-ji-freebsd/di-11.2-jie-tong-guo-yuan-dai-ma-geng-xin.html"><strong aria-hidden="true">11.2.</strong> 通过源代码更新</a></li><li class="chapter-item expanded "><a href="../di-11-zhang-geng-xin-yu-sheng-ji-freebsd/di-11.3-jie-pi-liang-bu-shu.html"><strong aria-hidden="true">11.3.</strong> 批量部署</a></li><li class="chapter-item expanded "><a href="../di-11-zhang-geng-xin-yu-sheng-ji-freebsd/di-11.4-jie-shi-yong-pkgbase-geng-xin.html"><strong aria-hidden="true">11.4.</strong> 使用 pkgbase 更新</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">12.</strong> GEOM 存储框架</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.1-jie-gai-shu.html"><strong aria-hidden="true">12.1.</strong> 概述</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.2-jie-raid-0.html"><strong aria-hidden="true">12.2.</strong> RAID 0</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.3-jie-raid-1.html"><strong aria-hidden="true">12.3.</strong> RAID 1</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.4-jie-raid-3.html"><strong aria-hidden="true">12.4.</strong> RAID 3</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.5-jie-ruan-raid-pei-zhi.html"><strong aria-hidden="true">12.5.</strong> 软 RAID 配置</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.6-jie-geom-gate-wang-luo.html"><strong aria-hidden="true">12.6.</strong> GEOM Gate 网络</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.7-jie-ci-pan-zhuang-zhi-biao-qian.html"><strong aria-hidden="true">12.7.</strong> 磁盘装置标签</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.8-jie-ufs-journaling-yu-geom.html"><strong aria-hidden="true">12.8.</strong> UFS Journaling 与 GEOM</a></li><li class="chapter-item expanded "><a href="../di-12-zhang-geom-cun-chu-kuang-jia/di-12.9-jie-zfs-ci-pan-jia-jie-mi.html"><strong aria-hidden="true">12.9.</strong> ZFS 磁盘加解密</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">13.</strong> DTrace</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-13-zhang-dtrace/di-13.1-jie-gai-shu.html"><strong aria-hidden="true">13.1.</strong> 概述</a></li><li class="chapter-item expanded "><a href="../di-13-zhang-dtrace/di-13.2-jie-kai-qi-dtrace.html"><strong aria-hidden="true">13.2.</strong> 开启 DTrace</a></li><li class="chapter-item expanded "><a href="../di-13-zhang-dtrace/di-13.3-jie-shi-yong-dtrace.html"><strong aria-hidden="true">13.3.</strong> 使用 DTrace</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">14.</strong> 网络管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.1-jie-ppp-bo-hao.html"><strong aria-hidden="true">14.1.</strong> PPP 拨号</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.2-jie-wifi.html"><strong aria-hidden="true">14.2.</strong> WIFI</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.3-jie-usb-rndis-usb-wang-luo-gong-xiang.html"><strong aria-hidden="true">14.3.</strong> USB RNDIS (USB 网络共享)</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.4-jie-lan-ya.html"><strong aria-hidden="true">14.4.</strong> 蓝牙</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.5-jie-ipv6.html"><strong aria-hidden="true">14.5.</strong> IPv6</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.6-jie-carp.html"><strong aria-hidden="true">14.6.</strong> CARP</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.7-jie-vlan.html"><strong aria-hidden="true">14.7.</strong> VLAN</a></li><li class="chapter-item expanded "><a href="../di-14-zhang-wang-luo-guan-li/di-14.8-jie-tcp-bbr.html"><strong aria-hidden="true">14.8.</strong> TCP BBR</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">15.</strong> FreeBSD 防火墙</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-15-zhang-freebsd-fang-huo-qiang/di-15.1-jie-wang-luo-can-shu-pei-zhi-ming-ling.html"><strong aria-hidden="true">15.1.</strong> 网络参数配置命令</a></li><li class="chapter-item expanded "><a href="../di-15-zhang-freebsd-fang-huo-qiang/di-15.2-jie-pf.html"><strong aria-hidden="true">15.2.</strong> PF</a></li><li class="chapter-item expanded "><a href="../di-15-zhang-freebsd-fang-huo-qiang/di-15.3-jie-ipfw.html"><strong aria-hidden="true">15.3.</strong> IPFW</a></li><li class="chapter-item expanded "><a href="../di-15-zhang-freebsd-fang-huo-qiang/di-15.4-jie-ipfilter-ipf.html"><strong aria-hidden="true">15.4.</strong> IPFILTER (IPF)</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">16.</strong> 服务器</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.1-jie-ftp-fu-wu-qi.html"><strong aria-hidden="true">16.1.</strong> FTP 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.2-jie-dhcp-fu-wu-qi.html"><strong aria-hidden="true">16.2.</strong> DHCP 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.3-jie-nodejs-xiang-guan.html"><strong aria-hidden="true">16.3.</strong> Nodejs 相关</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.4-jie-dns-fu-wu-qi.html"><strong aria-hidden="true">16.4.</strong> DNS 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.5-jie-nis-fu-wu-qi.html"><strong aria-hidden="true">16.5.</strong> NIS 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.6-jie-postfix-fu-wu-qi.html"><strong aria-hidden="true">16.6.</strong> Postfix 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.7-jie-samba-fu-wu-qi.html"><strong aria-hidden="true">16.7.</strong> Samba 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.8-jie-nfs-fu-wu-qi.html"><strong aria-hidden="true">16.8.</strong> NFS 服务器</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.9-jie-iscsi.html"><strong aria-hidden="true">16.9.</strong> iSCSI</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.10-jie-webmin.html"><strong aria-hidden="true">16.10.</strong> Webmin</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.11-jie-rsync-tong-bu-fu-wu.html"><strong aria-hidden="true">16.11.</strong> rsync 同步服务</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.12-jie-shi-jian-fu-wu.html"><strong aria-hidden="true">16.12.</strong> 时间服务</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.13-jie-wildfly.html"><strong aria-hidden="true">16.13.</strong> Wildfly</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.14-jie-slurm.html"><strong aria-hidden="true">16.14.</strong> Slurm</a></li><li class="chapter-item expanded "><a href="../di-16-zhang-fu-wu-qi/di-16.15-jie-minio-dui-xiang-cun-chu-fu-wu.html"><strong aria-hidden="true">16.15.</strong> MinIO 对象存储服务</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">17.</strong> 网络服务器</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.1-jie-apache.html"><strong aria-hidden="true">17.1.</strong> Apache</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.2-jie-nginx.html"><strong aria-hidden="true">17.2.</strong> Nginx</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.3-jie-php-8.x.html"><strong aria-hidden="true">17.3.</strong> PHP 8.X</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.4-jie-mysql-5.x.html"><strong aria-hidden="true">17.4.</strong> MySQL 5.X</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.5-jie-mysql-8.x.html"><strong aria-hidden="true">17.5.</strong> MySQL 8.X</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.6-jie-typecho.html"><strong aria-hidden="true">17.6.</strong> Typecho</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.7-jie-ssl-pei-zhi.html"><strong aria-hidden="true">17.7.</strong> SSL 配置</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.8-jie-postgresql-yu-pgadmin4.html"><strong aria-hidden="true">17.8.</strong> PostgreSQL 与 pgAdmin4</a></li><li class="chapter-item expanded "><a href="../di-17-zhang-wang-luo-fu-wu-qi/di-17.9-jie-telegraf+influxdb+grafana-jian-kong-ping-tai.html"><strong aria-hidden="true">17.9.</strong> Telegraf+InfluxDB+Grafana 监控平台</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">18.</strong> 树莓派与 RISCV</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.1-jie-shu-mei-pai-de-jian-jie.html"><strong aria-hidden="true">18.1.</strong> 树莓派的简介</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.2-jie-xi-tong-an-zhuang.html"><strong aria-hidden="true">18.2.</strong> 系统安装</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.3-jie-shi-yong-pei-zhi.html"><strong aria-hidden="true">18.3.</strong> 使用配置</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.4-jie-usb-wang-ka-yu-wifi.html"><strong aria-hidden="true">18.4.</strong> USB 网卡与 WIFI</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.5-jie-shu-mei-pai-yu-linux-jian-rong-ceng.html"><strong aria-hidden="true">18.5.</strong> 树莓派与 Linux 兼容层</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.6-jie-riscv.html"><strong aria-hidden="true">18.6.</strong> RISC-V</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.7-jie-shu-mei-pai-yu-openbsd.html"><strong aria-hidden="true">18.7.</strong> 树莓派与 OpenBSD</a></li><li class="chapter-item expanded "><a href="../di-18-zhang-shu-mei-pai-yu-riscv/di-18.8-jie-zai-riscv-kai-fa-ban-shang-an-zhuang-openbsd.html"><strong aria-hidden="true">18.8.</strong> 在 RISCV 开发板上安装 OpenBSD</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">19.</strong> 文学故事</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.1-jie-wo-yu-freebsd-de-gu-shi.html"><strong aria-hidden="true">19.1.</strong> 我与 FreeBSD 的故事</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.2-jie-freebsd-yu-mao-xuan-ze-1-de-sheng-huo.html"><strong aria-hidden="true">19.2.</strong> FreeBSD 与猫 ——选择 1%的生活</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.3-jie-linux-yu-ku-nan-zhe-xue.html"><strong aria-hidden="true">19.3.</strong> Linux 与苦难哲学</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.4-jie-cong-yi-ge-xiang-fa-kan-freebsd-shi-shang-ye-hua-huan-shi-xue-yuan-pai.html"><strong aria-hidden="true">19.4.</strong> 从一个想法看 FreeBSD 是商业化还是学院派</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.5-jie-linux-she-qu-yi-jing-cheng-wei-le-yi-ge-ang-zang-de-ni-tan.html"><strong aria-hidden="true">19.5.</strong> Linux 社区已经成为了一个肮脏的泥潭</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.6-jie-linux-bai-ju-yi-ding-bo-freebsd-da-bai-ju.html"><strong aria-hidden="true">19.6.</strong> Linux 败局已定——驳 FreeBSD 大败局</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.7-jie-xiao-shuo-freebsd-cong-ru-men-dao-pao-lu.html"><strong aria-hidden="true">19.7.</strong> 小说——FreeBSD 从入门到跑路</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.8-jie-zhong-ti-freebsd-yu-da-bai-ju.html"><strong aria-hidden="true">19.8.</strong> 重提 FreeBSD 与大败局</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.9-jie-suo-wei-kai-yuan-zhe-xue.html"><strong aria-hidden="true">19.9.</strong> 所谓开源哲学</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.10-jie-tu-zi.html"><strong aria-hidden="true">19.10.</strong> 兔子</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.11-jie-xun-dao.html"><strong aria-hidden="true">19.11.</strong> 寻道</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.12-jie-shi-ge-xuan.html"><strong aria-hidden="true">19.12.</strong> 诗歌选</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.13-jie-jian-yi-dao-feng.html"><strong aria-hidden="true">19.13.</strong> 简议道风</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.14-jie-xiao-shuo-ni-yu-an.html"><strong aria-hidden="true">19.14.</strong> 小说——你与暗</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.15-jie-wu-xiang-he-chu.html"><strong aria-hidden="true">19.15.</strong> 吾乡何处</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.16-jie-zan-que.html"><strong aria-hidden="true">19.16.</strong> 暂缺</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.17-jie-za-ji.html"><strong aria-hidden="true">19.17.</strong> 杂记</a></li><li class="chapter-item expanded "><a href="../di-19-zhang-wen-xue-gu-shi/di-19.18-jie-wang-luo-an-quan-zhong-de-zhu-ti-yin-si-quan-yu-zhu-ti-xuan-ze-de-zi-you-tao-lun-yi-wan.html"><strong aria-hidden="true">19.18.</strong> 网络安全中的主体隐私权与主体选择的自由讨论 一网络安全与企业道德</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">20.</strong> 娱乐与教育</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-20-zhang-yu-le-yu-jiao-yu/di-20.1-jie-you-xi.html"><strong aria-hidden="true">20.1.</strong> 游戏</a></li><li class="chapter-item expanded "><a href="../di-20-zhang-yu-le-yu-jiao-yu/di-20.2-jie-yin-shi-pin-bo-fang-qi.html"><strong aria-hidden="true">20.2.</strong> 音视频播放器</a></li><li class="chapter-item expanded "><a href="../di-20-zhang-yu-le-yu-jiao-yu/di-20.3-jie-yin-shi-pin-jian-ji.html"><strong aria-hidden="true">20.3.</strong> 音视频剪辑</a></li><li class="chapter-item expanded "><a href="../di-20-zhang-yu-le-yu-jiao-yu/di-20.4-jie-jiao-yu.html"><strong aria-hidden="true">20.4.</strong> 教育</a></li><li class="chapter-item expanded "><a href="../di-20-zhang-yu-le-yu-jiao-yu/di-20.5-jie-ke-yan-yu-zhuan-ye-gong-ju.html"><strong aria-hidden="true">20.5.</strong> 科研与专业工具</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">21.</strong> Linux 兼容层</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.1-jie-linux-jian-rong-ceng-shi-xian.html"><strong aria-hidden="true">21.1.</strong> Linux 兼容层实现</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.2-jie-linux-jian-rong-ceng-ji-yu-centos-yuan-sheng.html"><strong aria-hidden="true">21.2.</strong> Linux 兼容层——基于 CentOS（原生）</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.3-jie-linux-jian-rong-ceng-ji-yu-ubuntudebian.html"><strong aria-hidden="true">21.3.</strong> Linux 兼容层——基于 Ubuntu/Debian</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.4-jie-linux-jian-rong-ceng-ji-yu-archlinux-bootstrap.html"><strong aria-hidden="true">21.4.</strong> Linux 兼容层——基于 ArchLinux bootstrap</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.5-jie-linux-jian-rong-ceng-ji-yu-archlinuxpacman.html"><strong aria-hidden="true">21.5.</strong> Linux 兼容层——基于 archlinux-pacman</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.6-jie-linux-jian-rong-ceng-ji-yu-opensuse.html"><strong aria-hidden="true">21.6.</strong> Linux 兼容层——基于 OpenSUSE</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.7-jie-linux-jian-rong-ceng-ji-yu-gentoo-linux.html"><strong aria-hidden="true">21.7.</strong> Linux 兼容层——基于 Gentoo Linux</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.8-jie-linux-jian-rong-ceng-ji-yu-rocky-linux.html"><strong aria-hidden="true">21.8.</strong> Linux 兼容层——基于 Rocky Linux</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.9-jie-linux-jian-rong-ceng-ji-yu-slackware-linux.html"><strong aria-hidden="true">21.9.</strong> Linux 兼容层——基于 Slackware Linux</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.10-jie-android-jian-rong-ceng.html"><strong aria-hidden="true">21.10.</strong> Android 兼容层</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.11-jie-linux-jian-rong-ceng-ji-yu-deepin.html"><strong aria-hidden="true">21.11.</strong> Linux 兼容层——基于 Deepin</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.12-jie-gao-ji-jiao-cheng-linux-jian-rong-ceng-yu-jail.html"><strong aria-hidden="true">21.12.</strong> 高级教程：Linux 兼容层与 Jail</a></li><li class="chapter-item expanded "><a href="../di-21-zhang-linux-jian-rong-ceng/di-21.13-jie-linux-jian-rong-ceng-gu-zhang-pai-chu-yu-pei-zhi.html"><strong aria-hidden="true">21.13.</strong> Linux 兼容层故障排除与配置</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">22.</strong> 编程与开发</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.0-jie-ru-he-ding-yue-freebsd-de-you-jian-lie-biao.html"><strong aria-hidden="true">22.1.</strong> 如何订阅 FreeBSD 的邮件列表</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.1-jie-ru-he-bao-gao-bug.html"><strong aria-hidden="true">22.2.</strong> 如何报告 Bug</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.2-jie-ru-he-ti-jiao-yi-ge-ruan-jian-bao.html"><strong aria-hidden="true">22.3.</strong> 如何提交一个软件包</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.3-jie-ru-he-can-yu-freebsd-xie-zuo.html"><strong aria-hidden="true">22.4.</strong> 如何参与 FreeBSD 协作</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.4-jie-cc++-huan-jing-de-pei-zhi.html"><strong aria-hidden="true">22.5.</strong> C/C++ 环境的配置</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.5-jie-java-huan-jing-de-pei-zhi.html"><strong aria-hidden="true">22.6.</strong> Java 环境的配置</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.6-jie-qt-huan-jing-de-pei-zhi.html"><strong aria-hidden="true">22.7.</strong> QT 环境的配置</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.7-jie-python-yu-vscode.html"><strong aria-hidden="true">22.8.</strong> Python 与 VScode</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.8-jie-rustgo-huan-jing-de-pei-zhi.html"><strong aria-hidden="true">22.9.</strong> Rust/Go 环境的配置</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.9-jie-csh-yu-qi-ta-shell.html"><strong aria-hidden="true">22.10.</strong> Csh 与其他 Shell</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.10-jie-tong-guo-ida-7-tiao-shi-freebsd.html"><strong aria-hidden="true">22.11.</strong> 通过 IDA 7 调试 FreeBSD</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.11-jie-git.html"><strong aria-hidden="true">22.12.</strong> Git</a></li><li class="chapter-item expanded "><a href="../di-22-zhang-bian-cheng-yu-kai-fa/di-22.12-jie-an-zhuang-code-server-he-clangd.html"><strong aria-hidden="true">22.13.</strong> 安装 code-server 和 clangd</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">23.</strong> 引导与恢复</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-23-zhang-yin-dao-yu-hui-fu/di-23.1-jie-hui-fu-mo-shi-yu-mi-ma-zhong-zhi.html"><strong aria-hidden="true">23.1.</strong> 恢复模式与密码重置</a></li><li class="chapter-item expanded "><a href="../di-23-zhang-yin-dao-yu-hui-fu/di-23.2-jie-freebsd-duo-ying-pan-efi-yin-dao-tong-yi.html"><strong aria-hidden="true">23.2.</strong> FreeBSD 多硬盘 EFI 引导统一</a></li><li class="chapter-item expanded "><a href="../di-23-zhang-yin-dao-yu-hui-fu/di-23.3-jie-freebsd-zhong-wen-tty-kong-zhi-tai.html"><strong aria-hidden="true">23.3.</strong> FreeBSD 中文 TTY 控制台</a></li><li class="chapter-item expanded "><a href="../di-23-zhang-yin-dao-yu-hui-fu/di-23.4-jie-yin-dao-jie-mian.html"><strong aria-hidden="true">23.4.</strong> 引导界面</a></li><li class="chapter-item expanded "><a href="../di-23-zhang-yin-dao-yu-hui-fu/di-23.5-jie-grub-ji-qi-ta-yin-dao.html"><strong aria-hidden="true">23.5.</strong> Grub 及其他引导</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">24.</strong> FreeBSD 特色</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-24-zhang-freebsd-te-se/di-24.1-jie-bsd-init-guan-li-fu-wu.html"><strong aria-hidden="true">24.1.</strong> BSD INIT 管理服务</a></li><li class="chapter-item expanded "><a href="../di-24-zhang-freebsd-te-se/di-24.2-jie-freebsd-mu-lu-jie-gou.html"><strong aria-hidden="true">24.2.</strong> FreeBSD 目录结构</a></li><li class="chapter-item expanded "><a href="../di-24-zhang-freebsd-te-se/di-24.3-jie-bsdinstall-yu-bsdconfig.html"><strong aria-hidden="true">24.3.</strong> bsdinstall 与 bsdconfig</a></li><li class="chapter-item expanded "><a href="../di-24-zhang-freebsd-te-se/di-24.4-jie-jin-yong-sendmail.html"><strong aria-hidden="true">24.4.</strong> 禁用 Sendmail</a></li><li class="chapter-item expanded "><a href="../di-24-zhang-freebsd-te-se/di-24.5-jie-li-yong-jiao-ben-zi-dong-sheng-cheng-bsdlibc-ku-wen-ben.html"><strong aria-hidden="true">24.5.</strong> 利用脚本自动生成 BSDlibc 库文本</a></li><li class="chapter-item expanded "><a href="../di-24-zhang-freebsd-te-se/di-24.6-jie-bsd-feng-ge-de-makegrepsedawk.html"><strong aria-hidden="true">24.6.</strong> BSD 风格的 make/grep/sed/awk</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">25.</strong> 系统设计与分析</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-25-zhang-xi-tong-she-ji-yu-fen-xi/di-25.1-jie-freebsd-she-ji-gai-shu.html"><strong aria-hidden="true">25.1.</strong> FreeBSD 设计概述</a></li><li class="chapter-item expanded "><a href="../di-25-zhang-xi-tong-she-ji-yu-fen-xi/di-25.2-jie-nei-he.html"><strong aria-hidden="true">25.2.</strong> 内核</a></li><li class="chapter-item expanded "><a href="../di-25-zhang-xi-tong-she-ji-yu-fen-xi/di-25.3-jie-jin-cheng.html"><strong aria-hidden="true">25.3.</strong> 进程</a></li><li class="chapter-item expanded "><a href="../di-25-zhang-xi-tong-she-ji-yu-fen-xi/di-25.4-jie-nei-cun-guan-li.html"><strong aria-hidden="true">25.4.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../di-25-zhang-xi-tong-she-ji-yu-fen-xi/di-25.5-jie-an-quan.html"><strong aria-hidden="true">25.5.</strong> 安全</a></li><li class="chapter-item expanded "><a href="../di-25-zhang-xi-tong-she-ji-yu-fen-xi/di-25.6-jie-io-xi-tong.html"><strong aria-hidden="true">25.6.</strong> I/O 系统</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">26.</strong> OpenBSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.0-jie-gai-shu.html"><strong aria-hidden="true">26.1.</strong> 概述</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.1-jie-an-zhuang.html"><strong aria-hidden="true">26.2.</strong> 安装</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.2-jie-pei-zhi.html"><strong aria-hidden="true">26.3.</strong> 配置</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.3-jie-bao-guan-li-qi.html" class="active"><strong aria-hidden="true">26.4.</strong> 包管理器</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.4-jie-zhuo-mian-yu-qi-ta-ruan-jian.html"><strong aria-hidden="true">26.5.</strong> 桌面与其他软件</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.5-jie-openbsd-bian-cheng-yu-kai-fa.html"><strong aria-hidden="true">26.6.</strong> OpenBSD 编程与开发</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.6-jie-lu-you-qi-yu-fang-huo-qiang.html"><strong aria-hidden="true">26.7.</strong> 路由器与防火墙</a></li><li class="chapter-item expanded "><a href="../di-26-zhang-openbsd/di-26.7-jie-openbsd-an-quan.html"><strong aria-hidden="true">26.8.</strong> OpenBSD 安全</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">27.</strong> NetBSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-27-zhang-netbsd/di-27.0-jie-gai-shu.html"><strong aria-hidden="true">27.1.</strong> 概述</a></li><li class="chapter-item expanded "><a href="../di-27-zhang-netbsd/di-27.1-jie-an-zhuang-yu-pei-zhi.html"><strong aria-hidden="true">27.2.</strong> 安装与配置</a></li><li class="chapter-item expanded "><a href="../di-27-zhang-netbsd/di-27.2-jie-huan-yuan-yu-bao-guan-li-qi.html"><strong aria-hidden="true">27.3.</strong> 换源与包管理器</a></li><li class="chapter-item expanded "><a href="../di-27-zhang-netbsd/di-27.3-jie-zhuo-mian-yu-qi-ta-ruan-jian.html"><strong aria-hidden="true">27.4.</strong> 桌面与其他软件</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">28.</strong> DragonFlyBSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-28-zhang-dragonflybsd/di-28.0-jie-gai-shu.html"><strong aria-hidden="true">28.1.</strong> 概述</a></li><li class="chapter-item expanded "><a href="../di-28-zhang-dragonflybsd/di-28.1-jie-an-zhuang-yu-pei-zhi.html"><strong aria-hidden="true">28.2.</strong> 安装与配置</a></li><li class="chapter-item expanded "><a href="../di-28-zhang-dragonflybsd/di-28.2-jie-huan-yuan-yu-bao-guan-li-qi.html"><strong aria-hidden="true">28.3.</strong> 换源与包管理器</a></li><li class="chapter-item expanded "><a href="../di-28-zhang-dragonflybsd/di-28.3-jie-zhuo-mian-yu-qi-ta-ruan-jian.html"><strong aria-hidden="true">28.4.</strong> 桌面与其他软件</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">29.</strong> TrueNAS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-29-zhang-truenas/di-29.1-jie-truenas-jian-jie.html"><strong aria-hidden="true">29.1.</strong> TrueNAS 简介</a></li><li class="chapter-item expanded "><a href="../di-29-zhang-truenas/di-29.2-jie-truenas-an-zhuang.html"><strong aria-hidden="true">29.2.</strong> TrueNAS 安装</a></li><li class="chapter-item expanded "><a href="../di-29-zhang-truenas/di-29.3-jie-truenas-pei-zhi-yu-tiao-you.html"><strong aria-hidden="true">29.3.</strong> TrueNAS 配置与调优</a></li><li class="chapter-item expanded "><a href="../di-29-zhang-truenas/di-29.4-jie-truenas-gu-zhang-pai-chu.html"><strong aria-hidden="true">29.4.</strong> TrueNAS 故障排除</a></li></ol></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">30.</strong> TwinCAT/BSD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../di-31-zhang-twincatbsd/di-31.1-jie-jian-jie.html"><strong aria-hidden="true">30.1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="../di-31-zhang-twincatbsd/di-31.2-jie-xi-tong-an-zhuang-yu-ji-ben-pei-zhi.html"><strong aria-hidden="true">30.2.</strong> 系统安装与基本配置</a></li><li class="chapter-item expanded "><a href="../di-31-zhang-twincatbsd/di-31.3-jie-kai-fa-huan-jing-pei-zhi.html"><strong aria-hidden="true">30.3.</strong> 开发环境配置</a></li><li class="chapter-item expanded "><a href="../di-31-zhang-twincatbsd/di-31.4-jie-gu-zhang-pai-chu.html"><strong aria-hidden="true">30.4.</strong> 故障排除</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../suffix.html">联系方式</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">BSD中文社区</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/bsdwiki/mdBook/tree/main/test_book/src" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/bsdwiki/mdBook/edit/beta/test_book/src/di-26-zhang-openbsd/di-26.3-jie-bao-guan-li-qi.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第-263-节-包管理器"><a class="header" href="#第-263-节-包管理器">第 26.3 节 包管理器</a></h1>
+<p>同其它 BSD 系统一样，OpenBSD 的软件安装主要有两种方式：采用官方预编译好的二进制包，以及通过 ports 源代码自己打包安装。这里我们推荐第一种方式安装。</p>
+<h2 id="二进制包"><a class="header" href="#二进制包">二进制包</a></h2>
+<p>我们推荐以二进制包的方式来安装软件，以火狐浏览器为例：</p>
+<ul>
+<li>安装软件 <code>pkg_add firefox</code></li>
+<li>删除软件 <code>pkg_delete firefox</code></li>
+<li>查询软件 <code>pkg_info -Q firefox</code></li>
+<li>升级软件 <code>pkg_add -iu firefox</code></li>
+<li>删除不需要的依赖包 <code>pkg_delete -a</code></li>
+</ul>
+<p>在线查询：<a href="https://openports.pl/">https://openports.pl/</a></p>
+<p>此外，全局的命令有：升级所有软件 <code>pkg_add -iu</code>； 删除所有软件包缓冲 <code>pkg_delete -a</code>。</p>
+<h3 id="换源"><a class="header" href="#换源">换源</a></h3>
+<p>打开 <code>/etc/installurl</code>，将默认源注释掉，改为 <code>https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/</code>。此处我们选择了 TUNA 源，用户也可选择<a href="https://mirrors.aliyun.com/openbsd">阿里镜像源</a>、 及<a href="https://mirror.nju.edu.cn/OpenBSD">南京大学源</a> 等。</p>
+<h2 id="ports"><a class="header" href="#ports">ports</a></h2>
+<p><a href="https://openports.pl/">查询网站</a></p>
+<p>CVS 在线浏览地址：<a href="https://cvsweb.openbsd.org/">https://cvsweb.openbsd.org/</a></p>
+<p>OpenBSD 对应多个系统版本(release、stable 以及 current)，各版本间的 ports 并不通用。</p>
+<p>release 版本的 ports 并不进行更新，版本号是锁定的，要使用滚动版本，需要使用 stable 或 current 系统。要升级系统需要从源代码更新或安装快照版本（current）<a href="https://cdn.openbsd.org/pub/OpenBSD/snapshots/amd64/">https://cdn.openbsd.org/pub/OpenBSD/snapshots/amd64/</a>。</p>
+<ul>
+<li>
+<p>release 版本直接拉取压缩包解压到 <code>/usr</code> 即可，比如：<a href="https://cdn.openbsd.org/pub/OpenBSD/7.3/ports.tar.gz">https://cdn.openbsd.org/pub/OpenBSD/7.3/ports.tar.gz</a></p>
+</li>
+<li>
+<p>current:</p>
+</li>
+</ul>
+<pre><code class="language-shell-session">$ cd /usr
+$ cvs -qd anoncvs@anoncvs.jp.openbsd.org:/cvs checkout -P ports
+</code></pre>
+<ul>
+<li>7.3 stable：</li>
+</ul>
+<pre><code class="language-shell-session">$ cd /usr
+$ cvs -qd anoncvs@anoncvs.jp.openbsd.org:/cvs checkout -rOPENBSD_7_3 -P ports
+</code></pre>
+<p>更新 ports：</p>
+<pre><code>$ cvs up -r TAG -Pd
+</code></pre>
+<h3 id="参考资料"><a class="header" href="#参考资料">参考资料</a></h3>
+<ul>
+<li><a href="https://www.openbsd.org/faq/ports/ports.html">Ports - Working with Ports</a></li>
+<li><a href="https://www.openbsd.org/anoncvs.html">Anonymous CVS</a></li>
+<li><a href="https://www.openbsd.org/faq/current.html">Following -current and using snapshots</a></li>
+</ul>
+<h2 id="pkgsrc"><a class="header" href="#pkgsrc">pkgsrc</a></h2>
+<p>pkgsrc 为 NetBSD 的软件包管理系统，不过它宣称同样支持 Linux 和 其它 BSD 系统。pkgsrc 在打包数量上似乎多过 OpenBSD 的官方包，不过唯一要担心的是 pkgsrc 与 OpenBSD 能否完美契合。以下内容仅供感兴趣的网友尝试，不能保证没有意外，我们也不推荐以 pkgsrc 为主力包管理系统。</p>
+<pre><code class="language-shell-session">$ cd ~/
+$ ftp https://cdn.NetBSD.org/pub/pkgsrc/pkgsrc-2023Q2/pkgsrc.tar.gz
+$ tar -xzf pkgsrc.tar.gz
+$ cd pkgsrc/bootstrap
+$ ./bootstrap --unprivileged
+</code></pre>
+<p>然后是添加路径 <code>~/pkg/bin</code> 到路径环境变量中。pkgsrc 树位于 <code>~/pkgsrc/</code> 中，其工作的所有相关文件均在<code>~/pkg/</code>中。</p>
+<p>我们就可以在<code>~/pkgsrc/</code>中搜索软件来安装程序，之后运行<code>bmake install</code>。如在<code>~/pkgsrc/chat/irssi/</code>安装 IRC 客户端 <code>IRSSI</code>。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../di-26-zhang-openbsd/di-26.2-jie-pei-zhi.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../di-26-zhang-openbsd/di-26.4-jie-zhuo-mian-yu-qi-ta-ruan-jian.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../di-26-zhang-openbsd/di-26.2-jie-pei-zhi.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../di-26-zhang-openbsd/di-26.4-jie-zhuo-mian-yu-qi-ta-ruan-jian.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
