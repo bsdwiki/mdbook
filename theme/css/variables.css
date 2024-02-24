@@ -109,15 +109,15 @@
     --sidebar-bg: #fafafa;
     --sidebar-fg: hsl(0, 0%, 0%);
     --sidebar-non-existant: #aaaaaa;
-    --sidebar-active: #1f1fff;
+    --sidebar-active: #ff0000;
     --sidebar-spacer: #f4f4f4;
 
     --scrollbar: #8F8F8F;
 
     --icons: #747474;
-    --icons-hover: #000000;
+    --icons-hover: #ff0000;
 
-    --links: #20609f;
+    --links: #ff0000;
 
     --inline-code-color: #301900;
 
