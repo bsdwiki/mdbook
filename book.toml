@@ -1,6 +1,6 @@
 [book]
-title = "BSD中文社区"
-description = "A demo book to test and validate changes"
+title = "BSDWIKI"
+description = "A book for Freebsd starters"
 authors = ["li xie"]
 multilingual = false
 language = "zh"
