@@ -15,7 +15,7 @@ git-repository-url = "https://github.com/bsdwiki/mdBook/tree/main/src"
 edit-url-template = "https://github.com/bsdwiki/mdBook/edit/beta/{path}"
 
 [output.html.playground]
-editable = true
+editable = false
 line-numbers = true
 
 [output.html.search]
