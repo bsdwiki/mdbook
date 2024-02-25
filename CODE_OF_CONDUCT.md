@@ -1,3 +1,3 @@
-# The Rust Code of Conduct
+# freebsdfoundation
 
-The Code of Conduct for this repository [can be found online](https://www.rust-lang.org/conduct.html).
+Donation for Freebsd [can be found online](https://freebsdfoundation.org/donate/).
